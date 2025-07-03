@@ -1,0 +1,6 @@
+# Python virtual environment
+.venv/
+.idea/
+core/secretkey.py
+__pycache__/
+*.pyc
