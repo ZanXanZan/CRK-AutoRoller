@@ -108,9 +108,6 @@ def bottom_anchor(screenshot, start_x, start_y, max_distance = 1000):
     return(x,y)
 
 
-
-
-
 def grid_check():
     screenshot = pyautogui.screenshot()
     width, height = screenshot.size
