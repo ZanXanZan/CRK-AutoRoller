@@ -40,6 +40,77 @@ def is_green(pixel, tolerance = 60):
         abs(b - target[2]) < tolerance
     )
 
+def is_black(pixel):
+    r, g, b = pixel[:3]
+    return (r,g,b) == (0,0,0)
+
+def left_anchor(screenshot, start_x, start_y, max_distance = 1000):
+    x,y = start_x,start_y
+
+    for _ in range(max_distance):
+        x -= 1
+        pixel = screenshot.getpixel((x, y))
+        if not is_black(pixel):
+            continue
+        above = screenshot.getpixel((x,y-2))
+        below = screenshot.getpixel((x,y+2))
+        if is_black(above) and is_black(below):
+            return (x,y)
+
+        elif not is_black(below):
+            y += 1
+
+        elif not is_black(above):
+            y -= 1
+    print("No edge found")
+    return (x,y)
+#I want to add custom error message here
+
+def right_anchor(screenshot, start_x, start_y, max_distance = 1000):
+    x,y = start_x,start_y
+
+    for _ in range(max_distance):
+        x += 1
+        pixel = screenshot.getpixel((x, y))
+        black_count = 0
+
+        for i in range(10):
+            ny = y + i
+            pixel = screenshot.getpixel((x, ny))
+            if is_black(pixel):
+                black_count += 1
+            else:
+                break
+
+        if black_count == 10:
+            return (x,y)
+    print("No edge found")
+    return(x,y)
+
+def top_anchor(screenshot, start_x, start_y, max_distance = 1000):
+    x,y = start_x,start_y
+    for _ in range(max_distance):
+        y -= 1
+        pixel = screenshot.getpixel((x, y))
+        if is_black(pixel):
+            return(x,y+1)
+    print("No edge found")
+    return(x,y)
+
+def bottom_anchor(screenshot, start_x, start_y, max_distance = 1000):
+    x,y = start_x,start_y
+    for _ in range(max_distance):
+        y += 1
+        pixel = screenshot.getpixel((x, y))
+        if is_black(pixel):
+            return(x,y)
+    print("No edge found")
+    return(x,y)
+
+
+
+
+
 def grid_check():
     screenshot = pyautogui.screenshot()
     width, height = screenshot.size
@@ -73,11 +144,22 @@ def grid_check():
                         if num_green >= 3:
                             top_left = (gx * cell_width, gy * cell_height)
                             bottom_right = ((gx + 1) * cell_width, (gy + 1) * cell_height)
-                            draw.rectangle([top_left, bottom_right], outline="red", width=3)
-                            if
-                            print(center_x, center_y)
-                            print(screenshot.size)
-                            found = True
+                            left = left_anchor(screenshot, center_x, center_y)
+                            right = right_anchor(screenshot, left[0], left[1])
+                            middle = (left[0] + right[0]) // 2
+                            top = top_anchor(screenshot, middle, left[1])
+                            bottom = bottom_anchor(screenshot, middle, right[1])
+                            height = bottom[1] - top[1]
+                            spacing = height *1.44
+                            for i in range(4):  # draw 5 buttons total
+                                offset_y = int(i * spacing)
+                                t = int(top[1] + offset_y)
+                                b = int(t + height)
+                                draw.rectangle(
+                                    [(left[0], t), (right[0], b)],
+                                    outline="red", width=3
+                                )
+                            screenshot.show()
                             return
     if not found:
         print("No reset button found")
