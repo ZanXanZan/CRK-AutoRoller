@@ -20,9 +20,9 @@ def move_mouse(x,y):
 #Add error message if not on mac or windows
 
 def performInitial():
-    pg.keyDown('command')
+    pg.keyDown('alt')
     pg.press('tab')
-    pg.keyUp('command')
+    pg.keyUp('alt')
 #Fix this shit bro
 
 
@@ -143,10 +143,11 @@ def grid_check():
                             bottom_right = ((gx + 1) * cell_width, (gy + 1) * cell_height)
                             left = left_anchor(screenshot, center_x, center_y)
                             right = right_anchor(screenshot, left[0], left[1])
-                            middle = (left[0] + right[0]) // 2
-                            top = top_anchor(screenshot, middle, left[1])
-                            bottom = bottom_anchor(screenshot, middle, right[1])
+                            middle_h = (left[0] + right[0]) // 2
+                            top = top_anchor(screenshot, middle_h, left[1])
+                            bottom = bottom_anchor(screenshot, middle_h, right[1])
                             height = bottom[1] - top[1]
+                            middle_v = (bottom[1] + top[1]) // 2
                             spacing = height *1.44
                             for i in range(4):  # draw 5 buttons total
                                 offset_y = int(i * spacing)
@@ -156,7 +157,7 @@ def grid_check():
                                     [(left[0], t), (right[0], b)],
                                     outline="red", width=3
                                 )
-                            screenshot.show()
+                            move_mouse(middle_h, middle_v)
                             return
     if not found:
         print("No reset button found")
