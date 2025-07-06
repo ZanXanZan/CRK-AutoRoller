@@ -3,13 +3,10 @@ import yaml
 import paddle
 import numpy as np
 from PIL import ImageGrab
-
 from ppocr.modeling.architectures import build_model
 from ppocr.utils.save_load import load_pretrained_params
 from ppocr.postprocess import build_post_process
-from ppocr.data.imaug import create_operators
 
-# Constants
 # --- Load Config ---
 base_dir = os.path.dirname(__file__)
 config_path = os.path.join(base_dir, "configs", "rec", "rec_gameui.yml")
@@ -17,7 +14,16 @@ config_path = os.path.join(base_dir, "configs", "rec", "rec_gameui.yml")
 with open(config_path, "r") as f:
     config = yaml.safe_load(f)
 
-# --- Build Model ---
+# --- Load character dictionary and calculate num_classes ---
+dict_path = config["PostProcess"]["character_dict_path"]
+with open(dict_path, "r", encoding="utf-8") as f:
+    characters = [line.strip() for line in f if line.strip()]
+num_classes = len(characters)
+if config["PostProcess"].get("use_space_char", False):
+    num_classes += 1
+config["Architecture"]["Head"]["out_channels"] = num_classes
+
+# --- Build and load model ---
 model = build_model(config["Architecture"])
 load_pretrained_params(model, config["Global"]["pretrained_model"])
 model.eval()
@@ -25,67 +31,49 @@ model.eval()
 # --- Post-processing ---
 postprocess = build_post_process(config["PostProcess"], config["Global"])
 
-# --- Build Cleaned-Up Operators (no DecodeImage or label transforms) ---
-ops = create_operators(config["Eval"]["dataset"]["transforms"], config["Global"])
-ops = [op for op in ops if op.__class__.__name__ not in ["DecodeImage", "RecLabelEncode", "CTCLabelEncode", "KeepKeys"]]
 
-# --- OCR Function ---
+import re
+
 def trueOCR(area):
-    s = ["def", "debuffresist", "amplifybuff", "dmgresistbypass", "atksp", "hp", "critresist",
-         "atk","dmgresist" ,"cooldow"]
-    y = ["Def", "Debuff Resist", "Amplify Buff", "Dmg Resist Bypass", "Atkspd", "Hp", "Crit Resist",
-         "Atk","Dmg Resist" ,"Cooldown"]
+    s_keys = ["def", "debuffresist", "amplifybuff", "dmgresistbypass", "atksp", "hp", "critresist",
+              "atk", "dmgresist", "cooldow"]
+    s_labels = ["Def", "Debuff Resist", "Amplify Buff", "Dmg Resist Bypass", "Atkspd", "Hp", "Crit Resist",
+                "Atk", "Dmg Resist", "Cooldown"]
+
+    # Screenshot and preprocess
     screenshot = ImageGrab.grab(bbox=area).convert("RGB")
-    image_np = np.array(screenshot)
-    image_bgr = image_np[..., ::-1]
+    resized_img = screenshot.resize((320, 32))
+    image_np = np.array(resized_img).astype("float32") / 255.0
+    image_np = (image_np - 0.5) / 0.5
+    image_np = image_np.transpose(2, 0, 1)
+    image_np = np.expand_dims(image_np, axis=0)
 
-    data = {"image": image_bgr}
-
-    for op in ops:
-        data = op(data)
-
-    if isinstance(data, list):
-        data = data[0]
-
-
-    input_tensor = paddle.to_tensor(np.expand_dims(data["image"], axis=0))
+    input_tensor = paddle.to_tensor(image_np)
 
     with paddle.no_grad():
         pred = model(input_tensor)
         result = postprocess(pred)
 
     if isinstance(result, list) and len(result) > 0 and isinstance(result[0], (tuple, list)):
-        text, score = result[0]
-        for i, stat in enumerate(s):
-            if stat not in text:
-                continue
+        raw_text, score = result[0]
+        raw_text_clean = raw_text.lower().replace(",", "").replace(" ", "")
 
-            index = text.find(stat)
-            remaining = text[index + len(stat):]
-            number = ''
-            for char in remaining:
-                if char.isdigit():
-                    number += char
+        # Extract percentage if present
+        percent_match = re.search(r"\d{1,2}\.?\d{0,2}%", raw_text)
+        percent = percent_match.group() if percent_match else None
+
+        for key, label in zip(s_keys, s_labels):
+            if key in raw_text_clean:
+                if percent:
+                    print(f"→ {label}, {percent} (conf: {score:.2f})")
                 else:
-                    break
+                    print(f"→ {label} (conf: {score:.2f})")
+                return
 
-            if not number:
-                print(text)
-                continue
-
-            stat = y[i]
-            decimal_number = float(number)
-            if len(number) == 2 and stat != "Hp" and stat != "Dmg Resist Bypass":
-                insert = '.'
-                numberstring = str(number)
-                mid = len(numberstring) // 2
-                newNumber = numberstring[:mid] + insert + numberstring[mid:]
-                decimal_number = float(newNumber)
-
-            if len(number) == 3:
-                decimal_str = number[:-1] + '.' + number[-1:]
-                decimal_number = float(decimal_number)
-
-            print(stat + "    " + str(decimal_number))
-
-
+        # Fallback raw output
+        if percent:
+            print(f"→ Raw: {raw_text} ({percent}) (conf: {score:.2f})")
+        else:
+            print(f"→ Raw: {raw_text} (conf: {score:.2f})")
+    else:
+        print("→ No result")
