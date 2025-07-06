@@ -8,3 +8,4 @@ data/images/
 data/eval/
 data/test/
 data/groundtruth/
+.vscode/
