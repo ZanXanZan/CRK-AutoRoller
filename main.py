@@ -7,19 +7,19 @@ import sys
 paddleocr_path = os.path.join(os.path.dirname(__file__), "PaddleOCR")
 sys.path.append(paddleocr_path)
 from image_recognition import trueOCR
-SCREENSHOT_AREA1 = (570, 262, 900, 290)  # Left, top, right, down
-SCREENSHOT_AREA2 = (570, 302, 900, 330)
-SCREENSHOT_AREA3 = (570, 342, 900, 370)
-SCREENSHOT_AREA4 = (570, 381, 900, 410)
 performInitial()
-counter = 0
-for i in range(3):
+time.sleep(1)
+regions = find_area()
+SCREENSHOT_AREA1, SCREENSHOT_AREA2, SCREENSHOT_AREA3, SCREENSHOT_AREA4 = regions
+time.sleep(2)
+for i in range(5):
+    if i == 0:
+        firstofday()
+    time.sleep(3)
     reroll()
-    time.sleep(1.5)
+    time.sleep(2)
     trueOCR(SCREENSHOT_AREA1)
     trueOCR(SCREENSHOT_AREA2)
     trueOCR(SCREENSHOT_AREA3)
     trueOCR(SCREENSHOT_AREA4)
-    time.sleep(0.5)
-    counter += 1
 

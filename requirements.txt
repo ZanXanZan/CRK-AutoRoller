@@ -7,3 +7,4 @@ openai
 PyYAML
 paddlepaddle
 paddleocr
+setuptools>=80.9.0
