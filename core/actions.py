@@ -7,6 +7,7 @@ import pytesseract
 from PIL import ImageGrab, ImageDraw
 import time
 import platform
+import pygetwindow as gw
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 def move_mouse(x,y):
@@ -20,16 +21,20 @@ def move_mouse(x,y):
 #Add error message if not on mac or windows
 
 def performInitial():
-    pg.keyDown('command')
-    pg.press('tab')
-    pg.keyUp('command')
-#Fix this shit bro
-
-
-def reroll():
-    # To do: Localize this for everyone
-    pg.moveTo(795, 453)
-    pg.click()
+    possible_titles = [
+        "BlueStacks App Player", "BlueStacks", "BlueStacks X",
+        "MuMu Player", "MuMu模拟器","MuMu","网易MuMu模拟器",
+        "LDPlayer","LDPlayer9","LDPlayer4","雷电模拟器",
+        "Screen Mirroring", "AirPlay"   
+    ]
+    all_windows = gw.getAllWindows()
+    for win in all_windows:
+        for title in possible_titles:
+            if title.lower() in win.title.lower():
+                print(win)
+                win.activate()
+                return
+    print("No valid window found")
 
 def is_green(pixel, tolerance = 60):
     r, g, b = pixel[:3]
@@ -111,7 +116,6 @@ def bottom_anchor(screenshot, start_x, start_y, max_distance = 1000):
 def grid_check():
     screenshot = pyautogui.screenshot()
     width, height = screenshot.size
-    draw = ImageDraw.Draw(screenshot)
     found = False
     cols, rows = 80, 60
     cell_width = int(width // cols)
@@ -139,52 +143,71 @@ def grid_check():
                                 num_green += 1
 
                         if num_green >= 3:
-                            top_left = (gx * cell_width, gy * cell_height)
-                            bottom_right = ((gx + 1) * cell_width, (gy + 1) * cell_height)
                             left = left_anchor(screenshot, center_x, center_y)
                             right = right_anchor(screenshot, left[0], left[1])
-                            middle = (left[0] + right[0]) // 2
-                            top = top_anchor(screenshot, middle, left[1])
-                            bottom = bottom_anchor(screenshot, middle, right[1])
+                            middle_h_1 = (left[0] + right[0]) // 2
+                            top = top_anchor(screenshot, middle_h_1, left[1])
+                            bottom = bottom_anchor(screenshot, middle_h_1, right[1])
                             height = bottom[1] - top[1]
+                            middle_v_1 = (bottom[1] + top[1]) // 2
+                            top_1 = top[1]
+                            bottom_1 = bottom[1]
                             spacing = height *1.44
-                            for i in range(4):  # draw 5 buttons total
+                            for i in range(4):
                                 offset_y = int(i * spacing)
                                 t = int(top[1] + offset_y)
                                 b = int(t + height)
-                                draw.rectangle(
-                                    [(left[0], t), (right[0], b)],
-                                    outline="red", width=3
-                                )
-                            screenshot.show()
-                            return
+                            return (top_1,middle_h_1,middle_v_1, bottom_1,left[0], right[0])
     if not found:
         print("No reset button found")
 
 
 def firstofday():
-    base_image = pg.locateOnScreen(str(BASE_DIR / 'reqimage' / 'firstofday.png'), confidence=0.7)
-    if base_image:
-        screenshot = pyautogui.screenshot()
-        crop_box = (
-            base_image.left + 30,
-            base_image.top + 100,
-            base_image.left + 700,
-            base_image.top + 570
-        )
-        region = screenshot.crop(crop_box)
-        data = pytesseract.image_to_data(region, output_type=pytesseract.Output.DICT)
-        text = pytesseract.image_to_string(region, lang='eng')
-        print(data)
-        for i, text in enumerate(data['text']):
-            if data['text'][i] == "today":
-                y = (data['top'][i + 1] + crop_box[1] // 2) - 190
-                x = (data['left'][i + 1] + crop_box[0] // 2) - 200
-                pg.moveTo(x, y)
-                pg.click()
-                break
+    coord_list = grid_check()
+    height = coord_list[3] - coord_list[0]
+    spacing_v = height*1.44
+    offset_y = int(3 * spacing_v)
+    t = int(coord_list[0] + offset_y)
+    b = int(t + height)
+    horizonal = coord_list[5] - coord_list[4]
+    reroll_spot = reroll_find()
+    move_mouse(reroll_spot[0], reroll_spot[1])
+    pg.click()
+    time.sleep(.5)
+    move_mouse(coord_list[1] - (horizonal * 1.98), b)
+    pg.click()
+    move_mouse(coord_list[1] - (horizonal * 1.98), b-(height*1.5))
+    pg.click()
+    move_mouse(reroll_spot[0], reroll_spot[1])
 
+def threeofsame():
+    coord_list = grid_check()
+    height = coord_list[3] - coord_list[0]
+    spacing_v = height*1.44
+    offset_y = int(3 * spacing_v)
+    t = int(coord_list[0] + offset_y)
+    b = int(t + height)
+    horizonal = coord_list[5] - coord_list[4]
+    reroll_spot = reroll_find()
+    move_mouse(reroll_spot[0], reroll_spot[1])
+    pg.click()
+    time.sleep(.5)
+    move_mouse(coord_list[1] - (horizonal * 1.98), b)
+    pg.click()
+    move_mouse(coord_list[1] - (horizonal * 1.98), b-(height*1.5))
+    pg.click()
+    move_mouse(reroll_spot[0], reroll_spot[1])
+    
+def reroll_find():
+    coord_list = grid_check()
+    height = coord_list[3] - coord_list[0]
+    spacing_v = height*1.44
+    offset_y = int(3 * spacing_v)
+    t = int(coord_list[0] + offset_y)
+    b = int(t + height)
+    horizonal = coord_list[5] - coord_list[4]
+    #move_mouse(coord_list[1] - (horizonal * 2), b+(height*1.5))
+    return (coord_list[1] - (horizonal * 2), b+(height*1.5))
 
-performInitial()
-grid_check()
-
+def reroll():
+    pg.click()
