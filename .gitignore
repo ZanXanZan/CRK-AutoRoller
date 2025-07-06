@@ -4,6 +4,6 @@ core/secretkey.py
 __pycache__/
 *.pyc
 .DS_Store
-data/images
-data/eval
-data/test
+data/.images
+data/.eval
+data/.test
