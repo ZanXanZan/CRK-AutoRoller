@@ -4,13 +4,13 @@ Global:
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/rec/resnet18_bilstm_ctc/
-  save_epoch_step: 5
+  save_epoch_step: 2
   eval_batch_step:
   - 0
   - 2000
   cal_metric_during_train: true
-  pretrained_model: null
-  checkpoints: null
+  pretrained_model: ./output/rec/resnet18_bilstm_ctc/iter_epoch_25
+  checkpoints: ./output/rec/resnet18_bilstm_ctc/iter_epoch_25
   save_inference_dir: ./inference/resnet18/
   infer_mode: false
   use_visualdl: false
