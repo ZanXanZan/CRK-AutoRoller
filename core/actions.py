@@ -7,6 +7,7 @@ import pytesseract
 from PIL import ImageGrab, ImageDraw
 import time
 import platform
+import pygetwindow as gw
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 def move_mouse(x,y):
@@ -20,12 +21,21 @@ def move_mouse(x,y):
 #Add error message if not on mac or windows
 
 def performInitial():
-    pg.keyDown('alt')
-    pg.press('tab')
-    pg.keyUp('alt')
-#Fix this shit bro
-
-
+    possible_titles = [
+        "BlueStacks App Player", "BlueStacks", "BlueStacks X",
+        "MuMu Player", "MuMu模拟器","MuMu","网易MuMu模拟器",
+        "LDPlayer","LDPlayer9","LDPlayer4","雷电模拟器",
+        "Screen Mirroring", "AirPlay"   
+    ]
+    all_windows = gw.getAllWindows()
+    for win in all_windows:
+        for title in possible_titles:
+            if title.lower() in win.title.lower():
+                print(win)
+                win.activate()
+                return
+    print("No valid window found")
+    
 def reroll():
     # To do: Localize this for everyone
     pg.moveTo(795, 453)
@@ -185,7 +195,5 @@ def firstofday():
                 pg.click()
                 break
 
-
 performInitial()
-grid_check()
 
