@@ -12,14 +12,20 @@ time.sleep(1)
 regions = find_area()
 SCREENSHOT_AREA1, SCREENSHOT_AREA2, SCREENSHOT_AREA3, SCREENSHOT_AREA4 = regions
 time.sleep(2)
-for i in range(5):
+for i in range(1):
     if i == 0:
         firstofday()
-    time.sleep(3)
-    reroll()
-    time.sleep(2)
-    trueOCR(SCREENSHOT_AREA1)
-    trueOCR(SCREENSHOT_AREA2)
-    trueOCR(SCREENSHOT_AREA3)
-    trueOCR(SCREENSHOT_AREA4)
+        time.sleep(2)
+        trueOCR(SCREENSHOT_AREA1)
+        trueOCR(SCREENSHOT_AREA2)
+        trueOCR(SCREENSHOT_AREA3)
+        trueOCR(SCREENSHOT_AREA4)
+
+    else:
+        reroll()
+        time.sleep(2)
+        trueOCR(SCREENSHOT_AREA1)
+        trueOCR(SCREENSHOT_AREA2)
+        trueOCR(SCREENSHOT_AREA3)
+        trueOCR(SCREENSHOT_AREA4)
 
