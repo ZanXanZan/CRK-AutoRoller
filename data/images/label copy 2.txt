@@ -1,0 +1,600 @@
+eval/360.png	CRIT%  5.2%
+eval/6602.png	DMG Resist 9.2%
+eval/3752.png	DMG Resist 5.9%
+eval/8607.png	Cooldown 2.8%
+eval/8439.png	DEF 7.4%
+eval/1347.png	Amplify Buff 2.3%
+eval/5121.png	Amplify Buff 3.6%
+eval/7722.png	Light DMG 9%
+eval/7859.png	DMG Resist 7.2%
+eval/6979.png	DMG Resist 8.3%
+eval/6951.png	CRIT% 7%
+eval/2504.png	DMG Resist 5.9%
+eval/2262.png	Debuff Resist 2.6%
+eval/1019.png	Amplify Buff 2.1%
+eval/1757.png	HP 13.1%
+eval/5525.png	DEF 6.4%
+eval/4612.png	DMG Resist 9.2%
+eval/5040.png	ATK 5.3%
+eval/3357.png	ATK SPD 6.4%
+eval/3343.png	DMG Resist 9%
+eval/8558.png	ATK 7.3%
+eval/4558.png	CRIT Resist 9.8%
+eval/2667.png	ATK 5.1%
+eval/6401.png	CRIT Resist 6%
+eval/4570.png	ATK 7.3%
+eval/5450.png	Poison DMG 12.4%
+eval/2459.png	ATK SPD 7.7%
+eval/1178.png	Debuff Resist 2.6%
+eval/7284.png	DMG Resist Bypass 11%
+eval/439.png	Amplify Buff 4.8%
+eval/1813.png	DMG Resist Bypass 11.6%
+eval/363.png	DMG Resist Bypass 12.1%
+eval/4980.png	DMG Resist 5.2%
+eval/7912.png	DMG Resist 7.7%
+eval/161.png	DMG Resist Bypass 14.6%
+eval/2842.png	ATK SPD 8.9%
+eval/175.png	Debuff Resist  2.5%
+eval/5650.png	Cooldown 3.3%
+eval/7669.png	DMG Resist Bypass 6.9%
+eval/3433.png	CRIT Resist 5.6%
+eval/7655.png	DMG Resist Bypass 11.2%
+eval/4837.png	CRIT Resist 7.3%
+eval/1797.png	HP 6%
+eval/203.png	HP 14.9%
+eval/6775.png	DMG Resist Bypass 12%
+eval/1027.png	Debuff Resist 2.3%
+eval/7318.png	Cooldown 4.8%
+eval/6953.png	DMG Resist Bypass 9.4%
+eval/570.png	Amplify Buff 2.5%
+eval/4822.png	DMG Resist 5.6%
+eval/8573.png	Cooldown 5.5%
+eval/6238.png	Debuff Resist 2.1%
+eval/799.png	CRIT% 3.8%
+eval/5719.png	CRIT% 4.7%
+eval/7668.png	ATK SPD 5.1%
+eval/7683.png	DMG Resist 8.6%
+eval/49.png	Amplify Buff  4.7%
+eval/7734.png	ATK 5.5%
+eval/8375.png	Light DMG 12.3%
+eval/1392.png	Ice DMG 13.4%
+eval/7907.png	Debuff Resist 3.3%
+eval/4981.png	DMG Resist 7.6%
+eval/6628.png	Cooldown 3.3%
+eval/3750.png	HP 12.6%
+eval/3787.png	Elec. DMG 13.7%
+eval/6199.png	CRIT% 6.2%
+eval/1802.png	Debuff Resist 4.7%
+eval/4749.png	Cooldown 3.3%
+eval/2304.png	Cooldown 2%
+eval/4588.png	CRIT Resist 4.5%
+eval/7095.png	DMG Resist Bypass 11.7%
+eval/59.png	Amplify Buff 3.4%
+eval/3224.png	Dark. DMG 8.1%
+eval/4211.png	CRIT% 3.2%
+eval/6412.png	Debuff Resist 3%
+eval/1221.png	ATK SPD 3.3%
+eval/6228.png	DMG Resist 8.2%
+eval/5735.png	CRIT% 3.3%
+eval/8211.png	CRIT Resist 4.9%
+eval/951.png	Ice DMG 13.9%
+eval/4403.png	Cooldown 3.9%
+eval/5709.png	DMG Resist 5.9%
+eval/2066.png	ATK SPD 4.4%
+eval/6957.png	HP 14.7%
+eval/5251.png	DEF 6%
+eval/5537.png	HP 6.9%
+eval/2270.png	CRIT Resist 4.3%
+eval/6017.png	Cooldown 4.8%
+eval/4166.png	CRIT Resist 8.4%
+eval/6981.png	CRIT Resist 7.9%
+eval/4628.png	Cooldown 4.3%
+eval/7335.png	ATK 3.6%
+eval/5052.png	DMG Resist Bypass 8.9%
+eval/978.png	CRIT% 3.1%
+eval/8562.png	ATK SPD 5.5%
+eval/1368.png	ATK SPD 8.6%
+eval/824.png	ATK SPD 3.2%
+eval/8370.png	HP 13.3%
+eval/7902.png	Light DMG 10.6%
+eval/5873.png	ATK SPD 6.9%
+eval/7080.png	CRIT Resist 5.7%
+eval/5697.png	ATK 5.1%
+eval/6611.png	ATK 5.5%
+eval/7269.png	CRIT Resist 5.7%
+eval/4748.png	Cooldown 2.1%
+eval/7282.png	DMG Resist Bypass 6.5%
+eval/1801.png	Earth DMG 9%
+eval/6149.png	ATK SPD 3.5%
+eval/5440.png	Cooldown 3.5%
+eval/6607.png	Debuff Resist 4%
+eval/7519.png	DMG Resist 8.7%
+eval/6161.png	CRIT% 4.2%
+eval/2307.png	DEF 7.1%
+eval/7928.png	Light DMG 12.7%
+eval/1395.png	ATK SPD 9.6%
+eval/99.png	ATK 6.1%
+eval/3582.png	Dark. DMG 9.5%
+eval/6439.png	Cooldown 3%
+eval/5087.png	Amplify Buff 4.7%
+eval/7121.png	DMG Resist 9.8%
+eval/6565.png	ATK SPD 3.9%
+eval/205.png	ATK 6.7%
+eval/5291.png	Debuff Resist 2.2%
+eval/5285.png	DMG Resist 6.8%
+eval/6968.png	HP 13%
+eval/6997.png	Amplify Buff 4.1%
+eval/5508.png	ATK SPD 4.2%
+eval/1747.png	CRIT% 5.5%
+eval/5535.png	DMG Resist Bypass 11.8%
+eval/7322.png	DMG Resist Bypass 5.7%
+eval/6982.png	Steel DMG 11.8%
+eval/7444.png	ATK SPD 3.3%
+eval/7493.png	DMG Resist 6.6%
+eval/5284.png	DMG Resist Bypass 10.5%
+eval/210.png	Debuff Resist  3.5%
+eval/204.png	DEF 5.8%
+eval/6216.png	DMG Resist 5.1%
+eval/2070.png	CRIT Resist 6.2%
+eval/6564.png	HP 13.7%
+eval/5045.png	DMG Resist 5.9%
+eval/748.png	Amplify Buff 4.9%
+eval/3385.png	CRIT Resist 4.3%
+eval/67.png	CRIT% 6.4%
+eval/2110.png	HP 11.7%
+eval/1357.png	ATK 5.3%
+eval/8367.png	ATK SPD 9.2%
+eval/7054.png	DEF 5.7%
+eval/2689.png	ATK 3.8%
+eval/4777.png	Amplify Buff 3.3%
+eval/6148.png	DMG Resist Bypass 13.8%
+eval/8603.png	Amplify Buff 5%
+eval/3965.png	HP 4.7%
+eval/4978.png	CRIT Resist 8.5%
+eval/4089.png	CRIT% 3%
+eval/4076.png	DMG Resist Bypass 13.8%
+eval/2407.png	ATK SPD 3.2%
+eval/6649.png	CRIT% 6.3%
+eval/1132.png	CRIT% 5.3%
+eval/5432.png	Amplify Buff 2.6%
+eval/5803.png	ATK 7.2%
+eval/1330.png	Ice DMG 14.7%
+eval/5793.png	DEF 5.1%
+eval/5787.png	ATK SPD 7.6%
+eval/2765.png	CRIT Resist 5.6%
+eval/8089.png	CRIT% 3.4%
+eval/1085.png	Ice DMG 10.7%
+eval/2573.png	Debuff Resist 4%
+eval/3123.png	Dark. DMG 14.7%
+eval/6729.png	CRIT% 6.3%
+eval/7351.png	Debuff Resist 3.6%
+eval/2228.png	Cooldown 5.6%
+eval/7344.png	Cooldown 3%
+eval/1735.png	DMG Resist 9.4%
+eval/2200.png	ATK 4%
+eval/276.png	ATK SPD  9.4%
+eval/7152.png	DMG Resist Bypass 13.2%
+eval/7620.png	ATK 4.6%
+eval/5037.png	ATK SPD 5.9%
+eval/6258.png	ATK 6.7%
+eval/3308.png	Amplify Buff 2.8%
+eval/706.png	HP 13.9%
+eval/3526.png	DEF 6.6%
+eval/8473.png	ATK 3.4%
+eval/5625.png	ATK 7.5%
+eval/5619.png	DMG Resist Bypass 7.5%
+eval/5194.png	DMG Resist Bypass 13%
+eval/5180.png	HP 7.7%
+eval/6489.png	Cooldown 2%
+eval/1133.png	Cooldown 3.9%
+eval/2348.png	DEF 5.6%
+eval/4077.png	Amplify Buff 3.4%
+eval/7218.png	CRIT Resist 8.9%
+eval/5396.png	Poison DMG 12.6%
+eval/4936.png	ATK 5.2%
+eval/4920.png	ATK 3.3%
+eval/116.png	CRIT% 4.4%
+eval/4263.png	HP 8.4%
+eval/5633.png	CRIT Resist 9%
+eval/5790.png	DMG Resist 6.5%
+eval/3450.png	Amplify Buff 2.2%
+eval/7391.png	HP 10.7%
+eval/6702.png	CRIT Resist 6%
+eval/1723.png	DMG Resist 8.9%
+eval/3652.png	DEF 6.1%
+eval/1051.png	Debuff Resist 3.9%
+eval/8075.png	DEF 7.1%
+eval/3647.png	Debuff Resist 4.2%
+eval/8074.png	HP 12.7%
+eval/6059.png	DMG Resist 9%
+eval/5578.png	DMG Resist 6.8%
+eval/7145.png	CRIT Resist 6.6%
+eval/7637.png	ATK SPD 6.5%
+eval/3337.png	CRIT% 5.5%
+eval/2773.png	Debuff Resist 4.3%
+eval/4302.png	DEF 5%
+eval/3243.png	Debuff Resist 4.5%
+eval/4276.png	CRIT% 6.8%
+eval/3041.png	CRIT% 6.4%
+eval/4060.png	ATK SPD 7.8%
+eval/5381.png	HP 5.4%
+eval/1681.png	CRIT Resist 7.3%
+eval/6844.png	Steel DMG 11.7%
+eval/4931.png	DMG Resist 6.1%
+eval/1861.png	DMG Resist 6.4%
+eval/7551.png	ATK SPD 4.6%
+eval/5346.png	Amplify Buff 4.1%
+eval/5150.png	Cooldown 3.5%
+eval/3253.png	Debuff Resist 4.9%
+eval/7196.png	HP 13.2%
+eval/1242.png	DEF 5.6%
+eval/1915.png	Debuff Resist 3.4%
+eval/3131.png	Amplify Buff 3.3%
+eval/3118.png	ATK 5.3%
+eval/6712.png	ATK 7.4%
+eval/4844.png	DEF 6.7%
+eval/927.png	Amplify Buff 2%
+eval/2038.png	DEF 6.6%
+eval/4267.png	CRIT% 4.9%
+eval/2616.png	HP 13.7%
+eval/2170.png	Cooldown 3.1%
+eval/8449.png	HP 5.9%
+eval/5145.png	CRIT% 6.5%
+eval/1337.png	ATK 7.2%
+eval/8139.png	Amplify Buff 3.1%
+eval/4059.png	DMG Resist 7%
+eval/1860.png	ATK 3.6%
+eval/6869.png	CRIT% 5.1%
+eval/3905.png	Debuff Resist 4.4%
+eval/3907.png	DMG Resist 6.1%
+eval/8107.png	ATK SPD 9.7%
+eval/1137.png	DMG Resist 6%
+eval/6880.png	Steel DMG 14.2%
+eval/1679.png	CRIT Resist 7.4%
+eval/2199.png	Cooldown 3.6%
+eval/2628.png	CRIT Resist 6.8%
+eval/6300.png	CRIT Resist 5.8%
+eval/716.png	Cooldown 3.1%
+eval/3442.png	Amplify Buff 2.3%
+eval/5027.png	CRIT% 3%
+eval/5769.png	DMG Resist 8.8%
+eval/3318.png	DMG Resist Bypass 10.8%
+eval/1269.png	HP 11.5%
+eval/6923.png	CRIT Resist 4.5%
+eval/1057.png	ATK 4.6%
+eval/5231.png	Amplify Buff 4.4%
+eval/5543.png	Debuff Resist 4.7%
+eval/4661.png	Debuff Resist 3.4%
+eval/4660.png	Poison DMG 10%
+eval/2563.png	DMG Resist 5.2%
+eval/7355.png	Debuff Resist 2.2%
+eval/4890.png	ATK SPD 6.5%
+eval/2761.png	CRIT Resist 8.9%
+eval/1268.png	Debuff Resist 2.2%
+eval/2749.png	ATK 5.7%
+eval/6249.png	Amplify Buff 2.6%
+eval/3251.png	DMG Resist 7.9%
+eval/2832.png	ATK 6.8%
+eval/2365.png	CRIT% 3.4%
+eval/6671.png	Steel DMG 12.1%
+eval/2359.png	DEF 6.1%
+eval/1644.png	CRIT% 5.1%
+eval/8106.png	Light DMG 9.6%
+eval/1687.png	ATK SPD 3.8%
+eval/336.png	ATK SPD  8.8%
+eval/2354.png	Debuff Resist 3.2%
+eval/6132.png	DEF 5.7%
+eval/2426.png	DMG Resist Bypass 7.9%
+eval/5361.png	ATK SPD 6.4%
+eval/4490.png	Debuff Resist 4.5%
+eval/1271.png	Ice DMG 11.1%
+eval/7600.png	DEF 7%
+eval/3466.png	Debuff Resist 3.3%
+eval/3314.png	CRIT Resist 8.2%
+eval/8527.png	Debuff Resist 4.4%
+eval/256.png	Cooldown 2.1%
+eval/4651.png	ATK 4.8%
+eval/6046.png	DMG Resist 6.5%
+eval/1701.png	CRIT% 6.4%
+eval/1072.png	ATK 3%
+eval/5228.png	CRIT Resist 9.1%
+eval/6721.png	Debuff Resist 3.2%
+eval/8081.png	HP 12.5%
+eval/1927.png	Earth DMG 11.8%
+eval/5599.png	Cooldown 4.7%
+eval/6084.png	CRIT% 5.8%
+eval/2779.png	Amplify Buff 3.2%
+eval/3467.png	Debuff Resist 2.4%
+eval/1270.png	DMG Resist 5.5%
+eval/5770.png	Fire DMG 14.3%
+eval/6523.png	Amplify Buff 3.3%
+eval/733.png	ATK 4%
+eval/7198.png	CRIT Resist 9.1%
+eval/6457.png	Cooldown 3.1%
+eval/1106.png	CRIT Resist 9.8%
+eval/5360.png	DMG Resist Bypass 8.8%
+eval/6899.png	CRIT Resist 5.1%
+eval/4056.png	HP 7.3%
+eval/323.png	ATK SPD  5.5%
+eval/1845.png	Debuff Resist 4.2%
+eval/6643.png	CRIT Resist 5.4%
+eval/4040.png	ATK 5.3%
+eval/6131.png	ATK SPD 8.3%
+eval/5410.png	Amplify Buff 4.5%
+eval/8134.png	Amplify Buff 4.6%
+eval/7561.png	CRIT Resist 5%
+eval/3075.png	HP 5.1%
+eval/4295.png	CRIT Resist 7.3%
+eval/7987.png	ATK 3.9%
+eval/4524.png	Amplify Buff 4%
+eval/876.png	DEF 6.3%
+eval/7777.png	Amplify Buff 4.4%
+eval/5799.png	ATK SPD 4.3%
+eval/5969.png	ATK SPD 3.9%
+eval/6535.png	CRIT% 6.5%
+eval/916.png	DMG Resist Bypass 7.6%
+eval/4450.png	HP 6%
+eval/6521.png	CRIT Resist 5%
+eval/1272.png	Amplify Buff 2%
+eval/8083.png	CRIT Resist 6.4%
+eval/8097.png	HP 12.6%
+eval/5558.png	DMG Resist Bypass 12.1%
+eval/282.png	DMG Resist Bypass  13.4%
+eval/5217.png	CRIT Resist 6.5%
+eval/5571.png	DEF 6.6%
+eval/3100.png	DMG Resist 8.4%
+eval/1703.png	Amplify Buff 2.5%
+eval/6736.png	ATK SPD 6.4%
+eval/2550.png	CRIT% 3.2%
+eval/4690.png	DMG Resist 5%
+eval/3302.png	ATK 7.5%
+eval/8525.png	CRIT Resist 4.3%
+eval/7158.png	ATK 5.8%
+eval/4445.png	CRIT Resist 7.1%
+eval/730.png	ATK 6.5%
+eval/8280.png	Debuff Resist 2.9%
+eval/3510.png	HP 10.9%
+eval/687.png	Cooldown 4.7%
+eval/37.png	HP 10.2%
+eval/6326.png	DMG Resist 6%
+eval/2140.png	ATK 3.5%
+eval/644.png	Debuff Resist 3.8%
+eval/5405.png	Amplify Buff 4.4%
+eval/1111.png	Debuff Resist 3.1%
+eval/5439.png	Amplify Buff 3.5%
+eval/4055.png	Debuff Resist 3.4%
+eval/6859.png	ATK SPD 6.5%
+eval/1101.png	CRIT Resist 6.4%
+eval/4737.png	Poison DMG 8%.
+eval/6134.png	DEF 5.1%
+eval/4290.png	DMG Resist Bypass 8.9%
+eval/2839.png	CRIT% 3.2%
+eval/2193.png	Debuff Resist 4.4%
+eval/7766.png	DEF 7.3%
+eval/1303.png	DEF 7.4%
+eval/7014.png	Steel DMG 8.3%
+eval/8284.png	ATK SPD 9.3%
+eval/8247.png	DEF 6.3%
+eval/5763.png	Cooldown 5.9%
+eval/1277.png	DMG Resist 7.6%
+eval/913.png	ATK SPD 3.9%
+eval/2756.png	DMG Resist Bypass 6%
+eval/4870.png	CRIT Resist 9.6%
+eval/3845.png	Cooldown 5.4%
+eval/4119.png	CRIT% 3.6%
+eval/8051.png	Amplify Buff 4%
+eval/5213.png	Amplify Buff 4.1%
+eval/523.png	HP 9.8%
+eval/4865.png	Cooldown 2.7%
+eval/906.png	ATK 3.6%
+eval/7149.png	DMG Resist Bypass 8%
+eval/2757.png	DMG Resist Bypass 14.9%
+eval/3449.png	Debuff Resist 4.5%
+eval/2019.png	HP 11%
+eval/5762.png	ATK SPD 4.1%
+eval/6445.png	ATK SPD 8.2%
+eval/1316.png	Cooldown 3.5%
+eval/682.png	Ice DMG 10.1%
+eval/6492.png	Cooldown 2.5%
+eval/2347.png	HP 13.5%
+eval/8130.png	Light DMG 11.2%
+eval/4093.png	HP 4.1%
+eval/325.png	DMG Resist Bypass  14%
+eval/6876.png	DMG Resist Bypass 9.3%
+eval/4085.png	DEF 6.5%
+eval/1843.png	Debuff Resist 4.6%
+eval/3098.png	HP 6.1%
+eval/4091.png	HP 13%
+eval/7567.png	Debuff Resist 2.8%
+eval/2351.png	DMG Resist 7.2%
+eval/30.png	DMG Resist  7.8%
+eval/1328.png	Ice DMG 9.3%
+eval/2621.png	HP 5.3%
+eval/3477.png	Amplify Buff 3.5%
+eval/5990.png	Debuff Resist 4.8%
+eval/4456.png	CRIT% 4.1%
+eval/2741.png	DMG Resist Bypass 11.1%
+eval/4442.png	CRIT Resist 6.5%
+eval/3885.png	ATK 5.9%
+eval/4132.png	CRIT Resist 7.1%
+eval/3648.png	DMG Resist 9.3%
+eval/4133.png	Cooldown 3.4%
+eval/7412.png	CRIT Resist 6.8%
+eval/7406.png	Amplify Buff 4.8%
+eval/3106.png	Dark. DMG 10.5%
+eval/5588.png	DMG Resist Bypass 6.5%
+eval/6903.png	CRIT% 5.8%
+eval/6532.png	HP 5.2%
+eval/3338.png	Dark. DMG 12.2%
+eval/5761.png	DMG Resist 6.7%
+eval/736.png	Ice DMG 10.9%
+eval/1329.png	Cooldown 4%
+eval/7764.png	Amplify Buff 2.5%
+eval/5167.png	DMG Resist 8.6%
+eval/7200.png	Steel DMG 14.8%
+eval/2378.png	CRIT Resist 6%
+eval/5365.png	Debuff Resist 2.8%
+eval/3072.png	CRIT% 3.9%
+eval/7214.png	HP 6.3%
+eval/2387.png	DMG Resist 10%
+eval/6186.png	Fire DMG 15%
+eval/6810.png	Debuff Resist 4.7%
+eval/2337.png	Amplify Buff 3.4%
+eval/7267.png	Amplify Buff 4.9%
+eval/8418.png	CRIT Resist 8%
+eval/792.png	DMG Resist Bypass 9.6%
+eval/7111.png	CRIT% 5.6%
+eval/6025.png	Cooldown 3.9%
+eval/4626.png	Elec. DMG 11.9%
+eval/5538.png	CRIT Resist 5.1%
+eval/1010.png	DEF 6.6%
+eval/8034.png	Cooldown 3.4%
+eval/7460.png	DEF 7.4%
+eval/7306.png	CRIT Resist 6.4%
+eval/5511.png	DMG Resist Bypass 9.4%
+eval/3160.png	Debuff Resist 5%
+eval/2524.png	Earth DMG 9%
+eval/4814.png	Amplify Buff 4.8%
+eval/5707.png	CRIT% 5.1%
+eval/5713.png	ATK SPD 7.7%
+eval/8237.png	CRIT% 3.6%
+eval/6554.png	Cooldown 3.7%
+eval/1415.png	Cooldown 2.5%
+eval/5673.png	ATK 7%
+eval/5667.png	Amplify Buff 3.3%
+eval/4579.png	CRIT Resist 5.6%
+eval/7070.png	DMG Resist Bypass 9.8%
+eval/5883.png	Amplify Buff 2.3%
+eval/8394.png	Debuff Resist 2.8%
+eval/5698.png	ATK SPD 3.7%
+eval/3000.png	Debuff Resist 4.4%
+eval/8141.png	HP 3.2%
+eval/4035.png	Amplify Buff 3.8%
+eval/3996.png	Cooldown 3.8%
+eval/6811.png	HP 8%
+eval/7299.png	CRIT% 6.1%
+eval/1824.png	DMG Resist 9.4%
+eval/4784.png	CRIT% 3.9%
+eval/3758.png	Elec. DMG 10.5%
+eval/7264.png	ATK SPD 3.6%
+eval/1167.png	HP 6.8%
+eval/5842.png	CRIT% 5.5%
+eval/5659.png	Debuff Resist 2.4%
+eval/3572.png	ATK 4.7%
+eval/69.png	Amplify Buff  3.4%
+eval/8584.png	ATK SPD 7.7%
+eval/1239.png	Debuff Resist 4.7%
+eval/2724.png	Cooldown 3.3%
+eval/1946.png	Amplify Buff 4.8%
+eval/6783.png	DMG Resist 8.3%
+eval/3823.png	Elec. DMG 9%
+eval/2254.png	ATK 6.3%
+eval/1985.png	CRIT Resist 6.2%
+eval/2526.png	Amplify Buff 3.3%
+eval/5249.png	DMG Resist 8.6%
+eval/5513.png	Poison DMG 10.2%
+eval/8037.png	ATK 3.8%
+eval/1990.png	DMG Resist 5.3%
+eval/579.png	Amplify Buff 4.5%
+eval/6796.png	DMG Resist 5.1%
+eval/7661.png	Debuff Resist 3.1%
+eval/3361.png	Dark. DMG 9.7%
+eval/4354.png	Elec. DMG 9.9%
+eval/4432.png	Amplify Buff 3.5%
+eval/753.png	Debuff Resist 4.4%
+eval/5923.png	Amplify Buff 3.3%
+eval/8426.png	ATK SPD 5.5%
+eval/5664.png	CRIT% 4.4%
+eval/7067.png	DMG Resist Bypass 10.4%
+eval/2889.png	Dark. DMG 13.5%
+eval/814.png	DMG Resist 10%
+eval/2137.png	ATK 3.5%
+eval/5894.png	Fire DMG 8.7%
+eval/4234.png	Amplify Buff 3%
+eval/8383.png	DEF 5.7%
+eval/627.png	DEF 7.2%
+eval/7932.png	Cooldown 2.4%
+eval/8142.png	Cooldown 2.1%
+eval/5328.png	ATK 5.5%
+eval/3942.png	DMG Resist Bypass 14.7%
+eval/435.png	DMG Resist 6.2%
+eval/1176.png	ATK SPD 9.4%
+eval/4032.png	DMG Resist Bypass 7.8%
+eval/5338.png	DEF 6.7%
+eval/3991.png	Cooldown 5.2%
+eval/4581.png	DEF 5.2%
+eval/3588.png	CRIT Resist 8.2%
+eval/7936.png	CRIT Resist 9.7%
+eval/7705.png	Debuff Resist 4.6%
+eval/1406.png	Ice DMG 12.9%
+eval/192.png	HP 3.2%
+eval/8422.png	HP 4.6%
+eval/810.png	HP 11.1%
+eval/6433.png	Amplify Buff 4.5%
+eval/2655.png	Amplify Buff 4.9%
+eval/7842.png	DEF 5.9%
+eval/4344.png	DMG Resist 9.4%
+eval/5728.png	Debuff Resist 4.6%
+eval/6962.png	DMG Resist 5.6%
+eval/4185.png	Debuff Resist 3.3%
+eval/7498.png	DEF 5.6%
+eval/3198.png	Debuff Resist 2.2%
+eval/6751.png	Cooldown 2.4%
+eval/2523.png	Cooldown 5.1%
+eval/1759.png	CRIT% 5.9%
+eval/4806.png	CRIT% 3.4%
+eval/2046.png	CRIT Resist 6.3%
+eval/4351.png	Elec DMG 8.2%
+eval/6552.png	ATK 7.5%
+eval/4345.png	Cooldown 4.7%
+eval/7102.png	Steel DMG 9.3%
+eval/8231.png	DMG Resist Bypass 8.8%
+eval/5067.png	CRIT Resist 7.8%
+eval/6585.png	Fire DMG 13.1%
+eval/8580.png	Debuff Resist 2%
+eval/7738.png	Amplify Buff 4.4%
+eval/1361.png	CRIT% 5.6%
+eval/6383.png	DEF 7.1%
+eval/2324.png	ATK 4.6%
+eval/4769.png	ATK 5.3%
+eval/385.png	DEF  6.5%
+eval/1820.png	DEF 5.9%
+eval/3945.png	ATK SPD 4.5%
+eval/5461.png	DEF 7.2%
+eval/2468.png	ATK SPD 3%
+eval/3992.png	HP 9.5%
+eval/6626.png	Cooldown 4.5%
+eval/5449.png	Cooldown 5.8%
+eval/608.png	DEF 6.4%
+eval/5105.png	Cooldown 5.3%
+eval/6418.png	Amplify Buff 2.7%
+eval/807.png	Amplify Buff 4.8%
+eval/740.png	DMG Resist Bypass 12.6%
+eval/6587.png	Amplify Buff 2.6%
+eval/4384.png	HP 3.3%
+eval/5703.png	DMG Resist 6.1%
+eval/2722.png	DEF 7.3%
+eval/542.png	Ice DMG 13%
+eval/230.png	ATK SPD 4.8%
+eval/7302.png	CRIT% 3.6%
+eval/581.png	CRIT Resist 8.8%
+eval/2246.png	ATK 5.1%
+eval/2252.png	Amplify Buff 3.3%
+eval/4144.png	DMG Resist Bypass 10.6%
+eval/1996.png	CRIT Resist 7.9%
+eval/6747.png	ATK 5.9%
+eval/6790.png	Amplify Buff 2.8%
+eval/4187.png	ATK SPD 8.4%
+eval/2051.png	HP 5.8%
+eval/3429.png	ATK 4.1%
+eval/6579.png	HP 10.8%
+eval/2904.png	CRIT Resist 9%
+eval/184.png	DMG Resist  6%
+eval/5676.png	CRIT Resist 8.7%
+eval/5110.png	CRIT% 3.6%
+eval/5104.png	DEF 5.8%
+eval/5689.png	Debuff Resist 4%
+eval/635.png	DMG Resist 7.9%
+eval/7539.png	Debuff Resist 4.4%
+eval/5306.png	DEF 6.4%
+eval/7288.png	Amplify Buff 3.9%
