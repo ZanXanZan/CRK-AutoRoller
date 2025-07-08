@@ -1,25 +1,16 @@
 import os
 
-# Base directory paths
-base_dir = '/Users/grantbiellak/PycharmProjects/CRK-AutoRoller/data'
-gt_dir = os.path.join(base_dir, 'groundtruth')
-splits = ['images', 'test', 'eval']  # data folders
+split_dir = "/Users/grantbiellak/PycharmProjects/CRK-AutoRoller/data/split"
+label_path = os.path.join(split_dir, "label.txt")
 
-for split in splits:
-    folder = os.path.join(base_dir, split)
-    label_path = os.path.join(folder, 'label.txt')
-    image_files = [f for f in os.listdir(folder) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
+with open(label_path, "w", encoding="utf-8") as label_file:
+    for fname in sorted(os.listdir(split_dir)):
+        if fname.endswith(".gt.txt"):
+            base = fname[:-7]  # remove .gt.txt
+            img_path = f"{base}.png"
+            gt_path = os.path.join(split_dir, fname)
+            with open(gt_path, "r", encoding="utf-8") as f:
+                label = f.read().strip()
+            label_file.write(f"{img_path}\t{label}\n")
 
-    with open(label_path, 'w') as label_out:
-        for img in image_files:
-            img_id, _ = os.path.splitext(img)  # '123.jpg' → '123'
-            gt_file = os.path.join(gt_dir, f"{img_id}.gt.txt")
-
-            if os.path.exists(gt_file):
-                with open(gt_file, 'r') as gt_in:
-                    label = gt_in.read().strip()
-                    label_out.write(f"{split}/{img}\t{label}\n")
-            else:
-                print(f"⚠️ No ground truth found for: {img_id}.gt.txt")
-
-print("✅ label.txt created for images/, test/, and eval/ using .gt.txt format")
+print("✅ label.txt generated.")
