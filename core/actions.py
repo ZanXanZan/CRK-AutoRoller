@@ -211,35 +211,23 @@ def reroll_find():
 def reroll():
     pg.click()
 
+
 def find_area(): #LEFT TOP RIGHT DOWN
     coord_list = grid_check()
     width = coord_list[5] - coord_list[4]
     height = coord_list[3] - coord_list[0]
 
-    full_right = coord_list[4] - (width * 0.1)
-    full_left = coord_list[4] - (width * 4.9)
+    right = coord_list[4] - (width * 0.1)
+    left = coord_list[4] - (width * 4.7)
 
-    top_offset = coord_list[0] - ((coord_list[2] - coord_list[0]) * 0.5)
+    top_offset = (coord_list[0] - ((coord_list[2] - coord_list[0]) * 0.5))
     bottom_offset = coord_list[3] + ((coord_list[3] - coord_list[2]) * 0.3)
-    
+
     regions = []
-    compression = 0.1
+
     for i in range(4):
-        raw_top = top_offset + (height * 1.52 * i)
-        raw_bottom = bottom_offset + (height * 1.52 * i)
-
-        region_height = raw_bottom - raw_top
-        crop_amount = region_height * compression
-
-        # Apply compression to top and bottom
-        top = raw_top + crop_amount
-        bottom = raw_bottom - crop_amount
-        region_width = full_right - full_left
-        mid = full_left + region_width / 2
-
-        # Left half
-        regions.append((full_left, top, mid, bottom))
-        # Right half
-        regions.append((mid, top, full_right, bottom))
-        
+        top = top_offset + (height * 1.52 * i)
+        bottom = bottom_offset + (height * 1.52 * i)
+        regions.append((left, top, right, bottom)) 
     return regions
+        
