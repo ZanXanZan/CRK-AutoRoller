@@ -13,7 +13,7 @@ regions = find_area()
 time.sleep(2)
 for i in range(1):
     if i == 0:
-        #firstofday()
+        firstofday()
         time.sleep(2)
     else:
         reroll()
