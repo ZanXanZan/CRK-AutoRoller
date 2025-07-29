@@ -1,4 +1,5 @@
 import os
+import Levenshtein
 import yaml
 import paddle
 import numpy as np
@@ -7,7 +8,8 @@ from ppocr.modeling.architectures import build_model
 from ppocr.utils.save_load import load_pretrained_params
 from ppocr.postprocess import build_post_process
 import re
-
+from Levenshtein import distance as levenshtein  
+from core.stat_result import Stat
 # --- Load Config ---
 base_dir = os.path.dirname(__file__)
 config_path = os.path.join(base_dir, "configs", "rec", "rec_gameui.yml")
@@ -37,20 +39,14 @@ postprocess = build_post_process(config["PostProcess"], config["Global"])
 
 # --- OCR Function ---
 def trueOCR(area):
-    # Label keys for matching common game UI stats
-    s_keys = ["def", "debuffresist", "amplifybuff", "dmgresistbypass", "atksp", "hp", "critresist",
-              "atk", "dmgresist", "cooldow"]
-    s_labels = ["Def", "Debuff Resist", "Amplify Buff", "Dmg Resist Bypass", "Atkspd", "Hp", "Crit Resist",
-                "Atk", "Dmg Resist", "Cooldown"]
+    
+    s_labels = ["DEF", "Debuff Resist", "Amplify Buff", "DMG Resist Bypass", "ATK SPD", "Hp", "Crit Resist",
+                "ATK", "DMG Resist", "Cooldown", "Ice DMG", "Steel DMG", "Poison DMG", "Elec DMG", "Earth DMG",
+                "Fire DMG", "Dark DMG"]
 
     # Capture screenshot and resize to training input size (Width x Height)
     screenshot = ImageGrab.grab(bbox=area).convert("RGB")
     resized_img = screenshot.resize((330, 32))  # matches [3, 32, 330]
-
-    # Normalize image: use BGR mean/std from config Train transforms
-    # Your config uses BGR with mean/std 127.5 and scale 1/255 in transforms,
-    # but the inference pipeline usually normalizes by (img / 255 - mean/127.5)
-    # For simplicity, replicate same normalization as training:
 
     image_np = np.array(resized_img).astype("float32")
     # Convert RGB to BGR (since your train config DecodeImage uses BGR)
@@ -74,22 +70,27 @@ def trueOCR(area):
     # Process result
     if isinstance(result, list) and len(result) > 0 and isinstance(result[0], (tuple, list)):
         raw_text, score = result[0]
-        raw_text_clean = raw_text.lower().replace(",", "").replace(" ", "")
         percent_match = re.search(r"\d{1,2}\.?\d{0,2}%", raw_text)
         percent = percent_match.group() if percent_match else None
+        semi_text = raw_text[0:len(raw_text) - len(percent)]
+        semi_text = semi_text.replace("[", " ")
+        same_letter = []
+        
+        for i in s_labels:
+            if i[0].lower() == semi_text[0].lower():
+                same_letter.append(i)
+                
 
-        for key, label in zip(s_keys, s_labels):
-            if key in raw_text_clean:
-                if percent:
-                    print(f"→ {label}, {percent} (conf: {score:.2f})")
-                else:
-                    print(f"→ {label} (conf: {score:.2f})")
-                return
-
-        # Fallback print
-        if percent:
-            print(f"→ Raw: {raw_text} ({percent}) (conf: {score:.2f})")
-        else:
-            print(f"→ Raw: {raw_text} (conf: {score:.2f})")
+        stat = ""
+        min_distance = 10
+        for label in same_letter:
+            d = levenshtein(semi_text, label)
+            if d < min_distance:
+                stat = label    
+                min_distance = d
+        if "%" in semi_text:
+            stat = "CRIT%"
+        output = Stat(stat, percent)
+        return output
     else:
-        print("→ No result")
+        return None, None, None

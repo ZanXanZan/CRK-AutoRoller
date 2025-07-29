@@ -12,14 +12,19 @@ time.sleep(1)
 regions = find_area()
 time.sleep(2)
 for i in range(1):
+    roll_list = []
     if i == 0:
-        firstofday()
+        #firstofday()
         time.sleep(2)
     else:
         reroll()
         time.sleep(2)
     
     for region in regions:
-        trueOCR(region)
+        single_roll = trueOCR(region)
+        roll_list.append(single_roll)
+
+print(roll_list)
+        
     
 
