@@ -25,7 +25,7 @@ def performInitial():
         "BlueStacks App Player", "BlueStacks", "BlueStacks X",
         "MuMu Player", "MuMu模拟器","MuMu","网易MuMu模拟器",
         "LDPlayer","LDPlayer9","LDPlayer4","雷电模拟器",
-        "Screen Mirroring", "AirPlay"   
+        "Screen Mirroring", "AirPlay", "Discord"  
     ]
     all_windows = gw.getAllWindows()
     for win in all_windows:
@@ -188,9 +188,6 @@ def threeofsame():
     b = int(t + height)
     horizonal = coord_list[5] - coord_list[4]
     reroll_spot = reroll_find()
-    move_mouse(reroll_spot[0], reroll_spot[1])
-    pg.click()
-    time.sleep(.5)
     move_mouse(coord_list[1] - (horizonal * 1.98), b)
     pg.click()
     move_mouse(coord_list[1] - (horizonal * 1.98), b-(height*1.5))
@@ -230,4 +227,4 @@ def find_area(): #LEFT TOP RIGHT DOWN
         bottom = bottom_offset + (height * 1.52 * i)
         regions.append((left, top, right, bottom)) 
     return regions
-        
+    

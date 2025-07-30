@@ -1,5 +1,4 @@
 import os
-import Levenshtein
 import yaml
 import paddle
 import numpy as np
@@ -41,8 +40,7 @@ postprocess = build_post_process(config["PostProcess"], config["Global"])
 def trueOCR(area):
     
     s_labels = ["DEF", "Debuff Resist", "Amplify Buff", "DMG Resist Bypass", "ATK SPD", "Hp", "Crit Resist",
-                "ATK", "DMG Resist", "Cooldown", "Ice DMG", "Steel DMG", "Poison DMG", "Elec DMG", "Earth DMG",
-                "Fire DMG", "Dark DMG"]
+                "ATK", "DMG Resist", "Cooldown"]
 
     # Capture screenshot and resize to training input size (Width x Height)
     screenshot = ImageGrab.grab(bbox=area).convert("RGB")
@@ -90,6 +88,8 @@ def trueOCR(area):
                 min_distance = d
         if "%" in semi_text:
             stat = "CRIT%"
+        if "Co PD" in semi_text:
+            stat = "HP"
         output = Stat(stat, percent)
         return output
     else:
