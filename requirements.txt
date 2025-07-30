@@ -3,7 +3,6 @@ numpy
 pyautogui
 pytesseract
 Pillow
-openai
 PyYAML
 paddlepaddle
 paddleocr
