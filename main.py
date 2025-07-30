@@ -15,22 +15,25 @@ time.sleep(2)
 #In case we have a first roll of the day and three of the same on that roll we can bypass both menus
 initial_three = False
 initial_list = []
+x = []
 for region in regions:
     single_roll = trueOCR(region)
     initial_list.append(single_roll)
     
-initial_roll = Roll(initial_list)
+initial_roll = Roll(initial_list, x)
 if initial_roll.three_check():
     initial_three = True
+    print(initial_three)
 
 #User input variables
 num_lines = 3
 target_stat = "Cooldown"
 stat_amount = 12
-max_rolls = 1
+max_rolls = 3
 three_found = False
-is_elemental = False
-element_type = ""
+#Maybe change this to be like "It really doesnt matter if its elemental if the user does not want an elemental type anyways"
+is_elemental = True
+element_type = "Earth DMG"
     
 #User inputs 0 or null, that means infinite rolls: Roll until found
 if max_rolls == 0:
@@ -44,7 +47,7 @@ for i in range(max_rolls):
     if i == 0 and initial_three:
         firstofday()
         threeofsame()
-    elif i == 0:
+    elif i == 0 and not initial_three:
         firstofday()
         time.sleep(2)
     elif three_found:
@@ -69,6 +72,7 @@ for i in range(max_rolls):
         roll_list.append(single_roll)
     
     current_roll = Roll(roll_list, validity_list)
+    table_add(current_roll)
     
     if not three_found:
         three_found = current_roll.three_check()

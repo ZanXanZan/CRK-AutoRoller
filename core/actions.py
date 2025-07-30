@@ -193,6 +193,12 @@ def threeofsame():
     move_mouse(coord_list[1] - (horizonal * 1.98), b-(height*1.5))
     pg.click()
     move_mouse(reroll_spot[0], reroll_spot[1])
+    time.sleep(.5)
+    move_mouse(coord_list[1] - (horizonal * 1.98), b)
+    pg.click()
+    move_mouse(coord_list[1] - (horizonal * 1.98), b-(height*1.5))
+    pg.click()
+    move_mouse(reroll_spot[0], reroll_spot[1])
     
 def reroll_find():
     coord_list = grid_check()

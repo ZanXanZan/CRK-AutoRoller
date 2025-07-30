@@ -39,7 +39,7 @@ postprocess = build_post_process(config["PostProcess"], config["Global"])
 # --- OCR Function ---
 def trueOCR(area):
     
-    s_labels = ["DEF", "Debuff Resist", "Amplify Buff", "DMG Resist Bypass", "ATK SPD", "Hp", "Crit Resist",
+    s_labels = ["DEF", "Debuff Resist", "Amplify Buff", "DMG Resist Bypass", "ATK SPD", "Hp", "CRIT Resist",
                 "ATK", "DMG Resist", "Cooldown"]
 
     # Capture screenshot and resize to training input size (Width x Height)

@@ -1,19 +1,33 @@
+import sqlite3
 import os
-import csv
-from datetime import datetime
-from PIL import Image
+base_dir = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(base_dir, "../userData/rolls.sqlite")
 
-IMAGE_FOLDER = 'data/images'
-GROUND_TRUTH_FOLDER = 'data/groundtruth.txt'
-CSV_FILE = 'data/dataset.csv'
+connection = sqlite3.connect(db_path)
 
+c = connection.cursor()
 
-def save_ground_truth(filename: str, text: str):
-    gt_filename = filename.replace('.png', '.gt.txt')
-    gt_filepath = os.path.join(IMAGE_FOLDER, gt_filename)
-    with open(gt_filepath, 'w') as f:
-        f.write(text)
+c.execute("""CREATE TABLE IF NOT EXISTS full_roll(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    stat TEXT,
+    percentage REAL,
+    valid INTEGER
+    )""")
 
-    with open(GROUND_TRUTH_FOLDER, 'a', encoding='utf-8') as f:
-        f.write(f'{filename},\t{text}\n')
+def table_add(roll):
+    for i, stat in enumerate(roll.list):
+        c.execute( "INSERT INTO full_roll (stat, percentage, valid) VALUES (?, ?, ?)",
+            (stat.stat, stat.getNum(), roll.valid[i]))
+        
+    connection.commit()
+    
+def view_table():
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    for row in cursor.execute("SELECT * FROM full_roll"):
+        print(row)
+    
+    conn.close() 
 
+view_table()
