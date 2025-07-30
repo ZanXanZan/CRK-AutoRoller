@@ -29,9 +29,10 @@ class Stat:
         elif self.stat == "DMG Resist Bypass":
             return 5 <= val <= 15
         else:
-            return 8 <= val <= 15      
+            return 8 <= val <= 15   
             
-            
+    def set_stat(self, stat):
+        self.stat = stat
 
     def __repr__(self):
         return f"{self.stat} {self.getNum()}"
